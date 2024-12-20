@@ -1,0 +1,25 @@
+<button popovertarget="feedback-popover">Leave Feedback</button>
+
+<dialog #feedbackDialog id="feedback-popover" class="feedback-dialog" popover>
+  <div class="feedback-header">
+    <h2>Submit feedback</h2>
+  </div>
+  <div class="feedback-inputs">
+    <fieldset>
+      <legend>Was this helpful?</legend>
+      <div class="radio-option">
+        <input #yesRadio type="radio" id="yes-radio" name="helpful" value="yes" required />
+        <label for="yes">yep 👍</label>
+      </div>
+      <div class="radio-option">
+        <input #noRadio type="radio" id="no-radio" name="helpful" value="no" required />
+        <label for="no">not really 👎</label>
+      </div>
+    </fieldset>
+    <label for="more-info">Tell us why:</label>
+    <textarea #freeFromInputBox id="more-info"></textarea>
+  </div>
+  <div class="feedback-actions">
+    <button #submitButton (click)="submitFeedback($event)">Submit</button>
+  </div>
+</dialog>
